@@ -12,29 +12,23 @@ The program prompts the user to input a single character. It then checks whether
 ## 💻 Code Explanation
 
 ```java
-package test_27_03_25;
 
 import java.util.Scanner;
 
 public class Char_Is_SpecialSymbolOrNot 
 {
-    public static void main(String[] args) 
-    {
-        Scanner s = new Scanner(System.in);
-        System.out.println("Enter the Special Character");
-        
-        // Takes the first character of the user input
-        char ch = s.next().charAt(0);
-
-        // Checks if the character is NOT (A-Z or a-z or 0-9)
-        if(!(ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z') || ch >= '0' && ch <= '9')
-        {   
-            System.out.print(ch);
-            System.out.println(" ASCII is --> " + (int)ch);
-        }
-        else
-            System.out.println("Not a Special Character");
-    }
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the Special Character");
+		char ch = s.next().charAt(0);
+		if(!(ch>='A' && ch<='Z' || ch>='a' && ch<='z') || ch>='0' && ch<='9')
+		{
+			System.out.println("Character " + ch + " is Special Character & Ascii is -->" + (int)ch);
+		}
+		else
+			System.out.println("Not a Special Character");
+	}
 }
 ```
 
@@ -48,24 +42,13 @@ public class Char_Is_SpecialSymbolOrNot
 4. If the condition is true, the program prints the ASCII value of the character.
 5. If not, it prints "Not a Special Character".
 
-### ⚠️ Note:
-
-The current condition contains a **logical error**. The corrected version should be:
-
-```java
-if(!( (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9') ))
-```
-
-This ensures only non-alphanumeric characters (true special symbols) are detected.
-
----
-
 ## ✅ Sample Output
 
 ```
 Enter the Special Character
 @
-@ ASCII is --> 64
+Character @ is Special Character & Ascii is -->64
+
 ```
 
 ```
